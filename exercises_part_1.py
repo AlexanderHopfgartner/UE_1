@@ -65,8 +65,7 @@ def swap_integers():
 
 def check_numbers(number1: int, number2: int) -> bool:
     if number1 % 6 == 0 or number2 % 6 == 0:
-        if number1 % 10 == 0 and number2 % 10 == 0:
-            return True
+        return number1 % 10 == 0 and number2 % 10 == 0
     return False
 
 
@@ -92,14 +91,12 @@ def sum_up(number1: int, number2: int) -> int:
 
 def sequence(number):
     if number in [x for x in range(0, 10)]:
-        for x in range(0, 10):
-            if x != number:
-                print(x)
+        print(" ".join([str(num) for num in range(0, 10) if num != number]))
     else:
         raise Exception("The Error you wanted.")
 
 
-# sequence(10)
+# sequence(7)
 
 # TODO 8. Exercise 8: String check
 # Write a function check_string(text) that accepts a string and checks if it begins OR ends with
@@ -109,9 +106,7 @@ def sequence(number):
 # lower and upper case strings.
 
 def check_string(text: str) -> bool:
-    if text.lower().endswith("a"):
-        return True
-    return False
+    return text.lower().endswith("a") or text.lower().startswith("a")
 
 
 # print(check_string("MILCHA"))
@@ -121,8 +116,7 @@ def check_string(text: str) -> bool:
 # spaces in between them with the height of the given integer.
 
 def triangle(rows: int):
-    for x in range(1, rows + 1):
-        print("*" * x)
+    [print("*" * x) for x in range(1, rows + 1)]
 
 
 # triangle(8)
